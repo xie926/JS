@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>Document</title>
+</head>
+<body>
+  <script>
+    function Student() {
+      this.age = 40;
+      // this === s
+      // s.age = 40
+      // return {a: 0, b: 1}   ;//存在return 将变得很不一样
+    }  
+    Student.prototype.say = function() {}
+    var s = new Student();
+    // s = {
+    //   age: 40,
+    //   __proto__: {
+    //     say: function() {},
+    //     constructor:  Student,
+    //     __proto__: Object.prototype
+    //   }
+    // }
+
+    function myNew(constructor, ...args) {
+      // 1
+      let obj = {}
+      // 2
+      let ret = constructor.apply(obj, args)
+      // 3
+      obj.__proto__ = constructor.prototype
+      // 4
+      return typeof ret === 'object' ? ret: obj;
+    }
+    console.log('Student  ',Student);
+    
+    var s1 = myNew(Student);
+    console.log('s1  ',s1);
+    
+  </script>
+</body>
+</html>
