@@ -1,0 +1,16 @@
+{
+  "name": "cookie-sessionstorage-localstorage",
+  "version": "1.0.0",
+  "description": "4kb\r   domain\r   value\r   httpOnly !!! 如果设置为true，不能通过js获取\r   secure ！！ 如果设置为true，https下传输\r   maxAge",
+  "main": "cookie.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "koa": "^2.11.0",
+    "koa-router": "^7.4.0"
+  }
+}
