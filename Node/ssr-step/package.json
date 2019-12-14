@@ -5,14 +5,16 @@
   "main": "index.js",
   "scripts": {
     "dev": "npm-run-all --parallel dev:**",
-    "dev:start": "nodemon  --watch build --exec node \"./build/bundle.js\"",
+    "dev:start": "nodemon --watch build --exec node \"./build/bundle.js\"",
     "dev:build:server": "webpack --config ./webpack.server.js --watch"
   },
   "keywords": [],
   "author": "",
   "license": "ISC",
   "dependencies": {
-    "express": "^4.17.1"
+    "express": "^4.17.1",
+    "react": "^16.12.0",
+    "react-dom": "^16.12.0"
   },
   "devDependencies": {
     "@babel/cli": "^7.6.4",
@@ -26,5 +28,4 @@
     "webpack-merge": "^4.1.4",
     "webpack-node-externals": "^1.7.2"
   }
-
 }

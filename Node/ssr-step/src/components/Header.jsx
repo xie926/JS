@@ -1,17 +1,20 @@
 import React from 'react';
 
-/*
-* {tag: 'div}
-* 浏览器：react-dom div
-* 服务端：字符串的 html
-*/
 class Header extends React.Component {
-  render(){
+  componentWillMount() {
+    console.log('component will')
+  }
+  buy() {
+    console.log(12070105)
+  }
+  render () {
     return (
       <div>
-        Hello Server
+        hello server yul
         <button onClick={this.buy}>buy</button>
       </div>
     )
   }
 }
+
+export default Header
