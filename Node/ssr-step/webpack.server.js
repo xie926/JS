@@ -1,7 +1,8 @@
+// @
 const path = require('path');
-const webpackMerge = require('webpack-merge')
-const nodeExternals = require('webpack-node-externals')
-const baseConfig = require('./webpack.base.js')
+const webpackMerge = require('webpack-merge');
+const nodeExternals = require('webpack-node-externals');
+const baseConfig = require('./webpack.base.js');
 const serverConfig = {
   target: 'node',
   mode: 'development',
@@ -12,4 +13,5 @@ const serverConfig = {
   },
   externals: [nodeExternals()]
 }
-module.exports = webpackMerge(baseConfig, serverConfig)
+module.exports = webpackMerge(baseConfig, 
+  serverConfig)
