@@ -2,9 +2,9 @@ module.exports = {
   db: {
     dialect: 'mysql',
     host: 'localhost',
-    database: 'test',
+    database: 'lm',
     username: 'root',
-    password: '123456'
+    password: '123456',
   },
-  middleware: ['logger']
+  middleware: ['logger']    // 加载logger中间件
 }

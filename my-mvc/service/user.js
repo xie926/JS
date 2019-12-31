@@ -1,14 +1,14 @@
-const delay = (data, fick) => new Promise(resolve => {
+const delay = (data, tick) => new Promise(resolve => {
   setTimeout(() => {
     resolve(data)
-  }, fick)
+  }, tick)
 })
 
 module.exports = {
-  getName () {// 模拟异步请求
+  getName() {  // 模拟异步请求
     return delay('Tom', 1000)
   },
-  getAge () {
+  getAge() {
     return 20
   }
 }
