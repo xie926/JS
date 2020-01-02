@@ -1,7 +1,6 @@
 import React from 'react';
 import express from 'express';
-import { renderToString 
-} from 'react-dom/server';
+import { renderToString } from 'react-dom/server';
 import Header from '../components/Header';
 import render from './render';
 /**
@@ -14,7 +13,7 @@ import render from './render';
  * vue:   weex
  */
 const app = new express();
-// publi 前端打包后访问的静态资源
+// 前端打包完的静态资源
 app.use(express.static('public'))
 app.get('*', (req, res) => {
   const html = render(req);

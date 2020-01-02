@@ -1,17 +1,20 @@
 import React from 'react';
-import {  renderToString  } from 'react-dom/server';
-import Header from '../components/Header';
-import { StaticRouter } from 'react-router-dom'
+import {
+  renderToString
+} from 'react-dom/server';
+// import Header from '../components/Header';
 import routes from '../routers'
-import { renderRoutes } from 'react-router-config'
-// BrowserRouter h5 history api
-// 内存 router ['/', '/a', '/a/c']
+import { renderRoutes} from 'react-router-config'
+import { StaticRouter} from 'react-router-dom'
 
 export default (req) => {
   // jsx
   const App = (
     <StaticRouter location={req.path}>
-     <div>{ renderRoutes(routes) }</div>
+      {/* <Header /> */}
+      <div>
+        { renderRoutes(routes)}
+      </div>
     </StaticRouter>
   )
   return `
