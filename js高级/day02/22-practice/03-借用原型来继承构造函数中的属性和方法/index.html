@@ -26,12 +26,13 @@
       console.log('管理');
     }
     function Son(money, cars, house, company) {
-      Father.call(this)
+      Father.call(this,money, cars, house, company)
     }
 
     Son.prototype = new Father()
     Son.prototype.constructor = Son
     var son = new Son('1000', '保时捷', '别墅', '网络公司')
+    console.log(son)
     console.log(Son.prototype.constructor)
   </script>
 </body>
