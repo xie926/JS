@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+</head>
+<body>
+  <script>
+    function Father(money, cars, house, company) {
+      this.money = money
+      this.cars = cars
+      this.house = house
+      this.company = company
+    }
+    // Father.prototype = {
+    //   constructor: Father,
+    //   smoke: function(){
+    //     console.log('可以抽烟');
+    //   },
+    //   manage: function(){
+    //     console.log('管理');
+    //   }
+    // }
+    Father.prototype.manage = function(){
+      console.log('管理');
+    }
+    function Son(money, cars, house, company) {
+      Father.call(this)
+    }
+
+    Son.prototype = new Father()
+    Son.prototype.constructor = Son
+    var son = new Son('1000', '保时捷', '别墅', '网络公司')
+    console.log(Son.prototype.constructor)
+  </script>
+</body>
+</html>

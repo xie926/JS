@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>Document</title>
+  <style>
+    table {
+      width: 400px;
+      border: 1px solid #000;
+      border-collapse: collapse;
+      margin: 0 auto;
+    }
+
+    td,
+    th {
+      border: 1px solid #000;
+      text-align: center;
+    }
+
+    .search {
+      width: 600px;
+      margin: 20px auto;
+    }
+  </style>
+</head>
+
+<body>
+  <div class="search">
+    按照商品名称查询: <input type="text" class="product">
+  </div>
+  <table>
+    <thead>
+      <tr>
+        <th>id</th>
+        <th>产品名称</th>
+        <th>价格</th>
+      </tr>
+    </thead>
+    <tbody>
+    </tbody>
+  </table>
+  <script>
+    // 利用新增数组方法操作数据
+    var data = [{
+      id: 1,
+      pname: '小米',
+      price: 3999
+    }, {
+      id: 2,
+      pname: 'oppo',
+      price: 999
+    }, {
+      id: 3,
+      pname: '荣耀',
+      price: 1299
+    }, {
+      id: 4,
+      pname: '华为',
+      price: 1999
+    },];
+    // 1. 获取相应的元素
+    var tbody = document.querySelector('tbody');
+    var product = document.querySelector('.product');
+    setData(data)
+    function setData(data) {
+      tbody.innerHTML = ''
+      data.forEach((item, index) => {
+        var tr = document.createElement('tr')
+        tr.innerHTML = '<td>' + item.id + '</td><td>' + item.pname + '</td><td>' + item.price + '</td>';
+        tbody.appendChild(tr);
+      })
+    }
+    product.oninput = function(){
+      var newData = data.filter((item, index) => {
+        if(item.pname.includes(product.value)){
+          return item
+        }
+      })
+
+      setData(newData)
+    }
+  </script>
+</body>
+
+</html>
