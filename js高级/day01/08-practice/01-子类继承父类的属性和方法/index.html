@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+</head>
+<body>
+  <script>
+    class Father {
+      constructor(money, cars, house, company){
+        this.money = money
+        this.cars = cars
+        this.house = house
+        this.company = company
+      }
+      manage(){
+        console.log('管理公司')
+      }
+    }
+
+    class Son extends Father{
+      constructor(money, cars, house, company){
+        super(money, cars, house, company)
+      }
+    }
+
+    var son = new Son('1000', '保时捷', '别墅', '网络公司')
+    son.manage()
+
+    class A {
+      constructor(name){
+        this.name = name
+      }
+      say(){
+        console.log('hi')
+      }
+    }
+
+    class B extends A{
+      // constructor(){
+
+      // }
+    }
+
+    var ggg = new B('xie')
+    console.log(ggg)
+    ggg.say()
+  </script>
+</body>
+</html>
